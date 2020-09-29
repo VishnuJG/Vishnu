@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design</title>
+    <style>
+
+.lava-text {
+
+background: url(http://www.textures4photoshop.com/tex/thumbs/watercolor-paint-background-free-thumb32.jpg) repeat center center; background-size: cover;
+ color: #fff;
+ -webkit-text-fill-color: transparent;
+ -webkit-background-clip: text;
+ -moz-background-clip:text;
+ background-clip:text;
+ font-family:Catamaran,sans-serif;
+ font-size:80px;
+ padding:0;
+ margin:0;
+ text-align:left;
+ -webkit-text-stroke: 3px #ffaa00;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #555555;
+}
+.crop-shapes {
+  width:800px;
+  position:relative;
+  right:0;
+  left:0;
+  top:0;
+  bottom:0;
+  margin:auto;
+}
+
+</style>
+
+    <script>
+        function rangeinp(i){
+        var col,r,g,b,a;
+        a=500
+        r=document.getElementById('red').value;
+        g=document.getElementById('green').value;
+        b=document.getElementById('blue').value;
+        col="rgb("+r+","+g+","+b+")";
+        document.getElementById('colchange').style.fill=col;
+        document.getElementById('colchange4').style.fill=col;
+        document.getElementById('colchange2').style.fill=col;
+        col="rgba("+r+","+g+","+b+",0.2)";
+        document.getElementById('divchange').style.background=col;
+        }
+        function change1(id,col){
+        document.getElementById(id).style.fill=col;
+        }
+
+    </script>
+</head>
+<body style="background-color:grey">
+<div>
+    <h1 style="font-size:500%;padding-bottom:10px;margin-top:10px;margin-bottom:10px">Design</h1>
+    <ul>
+  <li><a href="secondwebpage.html">Home</a></li>
+  <li><a href="WAR.html">Design</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+<hr>
+</div>
+<div id="divchange" style="background-color:clr;margin-top:10px;margin-left:10px;margin-right:10px;padding-right:20px;padding-bottom:60px;padding-left:20px;padding-top:10px;border:1px solid red">
+<h1 class="lava-text" style="color:white;padding-bottom:50px">Choose color</h1>
+    <svg width="100%" height="400" style="display:block;margin-left:auto;margin-right:auto">
+  <rect id="colchange" x=460 y=10 width=550 height=250
+  style="fill:clr;stroke:white;stroke-width:1;fill-opacity:0.9;stroke-opacity:0.9;display:block;margin-left:auto;margin-right:auto" />
+    <polygon id="colchange2" points="460,10 160,-20 160,333 460,260"
+  style="fill:clr;stroke:white;stroke-width:1;fill-opacity:0.7;stroke-opacity:0.9;display:block;margin-left:auto;margin-right:auto" />
+    <polygon id="colchange4" points="1010,10 1310,-20 1310,333 1010,260"
+  style="fill:clr;stroke:white;stroke-width:1;fill-opacity:0.7;stroke-opacity:0.9;display:block;margin-left:auto;margin-right:auto" />
+        <polygon points="460,260 1010,260 1310,333 160,333" style="fill:rgba(202,164,114,1);stroke:black;stroke-width:1;fill-opacity:0.6;stroke-opacity:0.9;display:block;margin-left:auto;margin-right:auto"/>
+
+    <polygon points="460,10 1010,10 1310,-20 160,-20" style="fill:white;stroke:black;stroke-width:1;fill-opacity:0.6;stroke-opacity:0.9;display:block;margin-left:auto;margin-right:auto" />
+
+    </svg>
+<button style="background-color:red;color:white;" onclick="change1('colchange','red'),change1('colchange2','red'),change1('colchange4','red')">Red</button>
+<button style="background-color:blue;color:white;" onclick="change1('colchange','blue'),change1('colchange2','blue'),change1('colchange4','blue')">Blue</button>
+<button style="background-color:green;color:white;" onclick="change1('colchange','green'),change1('colchange2','green'),change1('colchange4','green')">Green</button>
+<button style="background-color:black;color:white;" onclick="change1('colchange','black'),change1('colchange2','black'),change1('colchange4','black')">Black</button>
+<button style="background-color:yellow;color:black;" onclick="change1('colchange','yellow'),change1('colchange2','yellow'),change1('colchange4','yellow')">Yellow</button>
+<button style="background-color:white;color:black;" onclick="change1('colchange','white'),change1('colchange2','white'),change1('colchange4','white')">White</button>
+
+    <br>
+    <form action="/action_page.php" method="get" style="margin-top:20px">
+  <label for="red" style="color:white">RED :</label>
+  <input type="range" value="0" id="red" name="red" min="0" max="255" oninput="rangeinp();document.getElementById('re').innerHTML=document.getElementById('red').value" onchange="rangeinp();document.getElementById('re').innerHTML=document.getElementById('red').value">
+    <label id="re" style="color:white"></label><br><label for="green" style="color:white">GREEN :</label>
+  <input type="range" value="0" id="green" name="green" min="0" max="255" oninput="rangeinp();document.getElementById('gre').innerHTML=document.getElementById('green').value" onchange="rangeinp();document.getElementById('gre').innerHTML=document.getElementById('green').value">
+<label id="gre" style="color:white"></label><br>
+    <label for="blue" style="color:white">BLUE :</label>
+  <input type="range" value="0" id="blue" name="blue" min="0" max="255" oninput="rangeinp();document.getElementById('bl').innerHTML=document.getElementById('blue').value" onchange="rangeinp();document.getElementById('bl').innerHTML=document.getElementById('blue').value">
+<label id="bl" style="color:white"></label>
+    </form>
+    </div>
+<div style="background-color:rgba(255,255,255,0.5);margin-top:10px;margin-left:10px;margin-right:10px;padding-right:20px;padding-bottom:60px;padding-left:20px;padding-top:10px;border:1px solid red">
+<h1 class="lava-text" style="color:white;padding-bottom:50px">Choose Design</h1>
+    <svg width="100%" height="400" style="display:block;margin-left:auto;margin-right:auto">
+
+    <defs>
+        <pattern id="img1" patternUnits="userSpaceOnUse" width="40%" height="90%" >
+            <image xlink:href="file:///D:/Applications%20Non%20pes/Web/HTML/pat1.png"  />
+        </pattern>
+        <pattern id="img2" patternUnits="userSpaceOnUse" width="10%" height="37%">
+            <image xlink:href="file:///D:/Applications%20Non%20pes/Web/HTML/Protruding-Squares.svg" x="0" y="0"
+                width="150" height="150" />
+        </pattern>
+        <pattern id="img3" patternUnits="userSpaceOnUse" width="10%" height="37%">
+            <image xlink:href="file:///D:/Applications%20Non%20pes/Web/HTML/pat2.png" x="0" y="0"
+                width="150" height="150" />
+        </pattern>
+        <pattern id="img4" patternUnits="userSpaceOnUse" width="9%" height="30%">
+            <image xlink:href="file:///D:/Applications%20Non%20pes/Web/HTML/pat3.svg" x="0" y="0"
+                width="150" height="150" /></pattern>
+            <pattern id="img5" patternUnits="userSpaceOnUse" width="10%" height="90%">
+            <image xlink:href="file:///D:/Applications%20Non%20pes/Web/HTML/pat4.png" x="0" y="0"
+                width="150" height="150" />
+        </pattern>
+        <pattern id="img6" patternUnits="userSpaceOnUse" width="100%" height="100%">
+            <image xlink:href="file:///D:/Applications%20Non%20pes/Web/HTML/pat5.svg" x="0" y="0"
+                width="100%" height="450" viewBox="0 0 1080 900" />
+        </pattern>
+        <pattern id="img7" patternUnits="userSpaceOnUse" width="100%" height="100%">
+            <image xlink:href="file:///D:/Applications%20Non%20pes/Web/HTML/pat6.svg" x="0" y="0"
+                width="840" height="100%" viewBox="0 0 1080 900" />
+            <image xlink:href="file:///D:/Applications%20Non%20pes/Web/HTML/pat6%20(1).svg" x="0" y="0"
+                width="2185" height="100%" viewBox="0 0 1080 900" />
+        </pattern>
+        <pattern id="img8" patternUnits="userSpaceOnUse" width="100%" height="100%">
+            <image xlink:href="file:///D:/Applications%20Non%20pes/Web/HTML/pat7.svg" x="0" y="0"
+                width="700" height="450" viewBox="0 0 1080 900" />
+            <image xlink:href="file:///D:/Applications%20Non%20pes/Web/HTML/pat7.svg" x="0" y="0"
+                width="1600" height="450" viewBox="0 0 1080 900" />
+            <image xlink:href="file:///D:/Applications%20Non%20pes/Web/HTML/pat7.svg" x="0" y="0"
+                width="2500" height="450" viewBox="0 0 1080 900" />
+        </pattern>
+        <pattern id="img9" patternUnits="userSpaceOnUse" width="100%" height="100%">
+            <image xlink:href="file:///D:/Applications%20Non%20pes/Web/HTML/pat8.svg" x="0" y="0"
+                width="1220" height="450" viewBox="0 0 1080 900" />
+            <image xlink:href="file:///D:/Applications%20Non%20pes/Web/HTML/pat8(1).svg" x="0" y="0"
+                width="3019" height="450" viewBox="0 0 1080 900" />
+        </pattern>
+        <pattern id="img10" patternUnits="userSpaceOnUse" width="100%" height="100%">
+            <image xlink:href="file:///D:/Applications%20Non%20pes/Web/HTML/pat9.svg" x="-350" y="-120"
+                width="1000" height="450" viewBox="0 0 1080 900" />
+            <image xlink:href="file:///D:/Applications%20Non%20pes/Web/HTML/pat9.svg" x="800" y="-120"
+                width="1000" height="450" viewBox="0 0 1080 900" />
+            <image xlink:href="file:///D:/Applications%20Non%20pes/Web/HTML/pat9.svg" x="150" y="-188"
+                width="1000" height="450" viewBox="0 0 1080 900" />
+
+        </pattern>
+    </defs>
+        <circle cx="180" cy="50" r="50" fill="url(#img2)" filter="url(#sparklin)" onmouseover="evt.target.setAttribute('opacity', '0.5');" onmouseout="evt.target.setAttribute('opacity','1)');" onclick="document.getElementById('colchange').style.fill='url(#img2)';document.getElementById('colchange4').style.fill='url(#img2)';document.getElementById('colchange2').style.fill='url(#img2)'"></circle>
+        <circle cx="50" cy="50" r="50" fill="url(#img1)" filter="url(#sparklin)" onmouseover="evt.target.setAttribute('opacity', '0.5');" onmouseout="evt.target.setAttribute('opacity','1)');" onclick="document.getElementById('colchange').style.fill='url(#img1)';document.getElementById('colchange4').style.fill='url(#img1)';document.getElementById('colchange2').style.fill='url(#img1)'"></circle>
+        <circle cx="310" cy="50" r="50" fill="url(#img3)" filter="url(#sparklin)" onmouseover="evt.target.setAttribute('opacity', '0.5');" onmouseout="evt.target.setAttribute('opacity','1)');" onclick="document.getElementById('colchange').style.fill='url(#img3)';document.getElementById('colchange4').style.fill='url(#img3)';document.getElementById('colchange2').style.fill='url(#img3)'"></circle>
+        <circle cx="440" cy="50" r="50" fill="url(#img4)" filter="url(#sparklin)" onmouseover="evt.target.setAttribute('opacity', '0.5');" onmouseout="evt.target.setAttribute('opacity','1)');" onclick="document.getElementById('colchange').style.fill='url(#img4)';document.getElementById('colchange4').style.fill='url(#img4)';document.getElementById('colchange2').style.fill='url(#img4)'"></circle>
+        <circle cx="570" cy="50" r="50" fill="url(#img5)" filter="url(#sparklin)" onmouseover="evt.target.setAttribute('opacity', '0.5');" onmouseout="evt.target.setAttribute('opacity','1)');" onclick="document.getElementById('colchange').style.fill='url(#img5)';document.getElementById('colchange4').style.fill='url(#img5)';document.getElementById('colchange2').style.fill='url(#img5)'"></circle>
+        <circle cx="700" cy="50" r="50" fill="url(#img6)" filter="url(#sparklin)" onmouseover="evt.target.setAttribute('opacity', '0.5');" onmouseout="evt.target.setAttribute('opacity','1)');" onclick="document.getElementById('colchange').style.fill='url(#img6)';document.getElementById('colchange4').style.fill='url(#img6)';document.getElementById('colchange2').style.fill='url(#img6)'"></circle>
+        <circle cx="830" cy="50" r="50" fill="url(#img7)" filter="url(#sparklin)" onmouseover="evt.target.setAttribute('opacity', '0.5');" onmouseout="evt.target.setAttribute('opacity','1)');" onclick="document.getElementById('colchange').style.fill='url(#img7)';document.getElementById('colchange4').style.fill='url(#img7)';document.getElementById('colchange2').style.fill='url(#img7)'"></circle>
+        <circle cx="960" cy="50" r="50" fill="url(#img8)" filter="url(#sparklin)" onmouseover="evt.target.setAttribute('opacity', '0.5');" onmouseout="evt.target.setAttribute('opacity','1)');" onclick="document.getElementById('colchange').style.fill='url(#img8)';document.getElementById('colchange4').style.fill='url(#img8)';document.getElementById('colchange2').style.fill='url(#img8)'"></circle>
+        <circle cx="1090" cy="50" r="50" fill="url(#img9)" filter="url(#sparklin)" onmouseover="evt.target.setAttribute('opacity', '0.5');" onmouseout="evt.target.setAttribute('opacity','1)');" onclick="document.getElementById('colchange').style.fill='url(#img9)';document.getElementById('colchange4').style.fill='url(#img9)';document.getElementById('colchange2').style.fill='url(#img9)'"></circle>
+        <circle cx="1220" cy="50" r="50" fill="url(#img10)" filter="url(#sparklin)" onmouseover="evt.target.setAttribute('opacity', '0.5');" onmouseout="evt.target.setAttribute('opacity','1)');" onclick="document.getElementById('colchange').style.fill='url(#img10)';document.getElementById('colchange4').style.fill='url(#img10)';document.getElementById('colchange2').style.fill='url(#img10)'"></circle>
+    </svg>
+</div>
+</body>
+</html>
