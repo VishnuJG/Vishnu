@@ -4,8 +4,7 @@ button {
   right: 0;
   bottom: 0;
   background-color: #3bb5e6d7;
-  padding: 15px 32px;
-  margin: 4px 2px;
+  padding: 5px 10px;
   border-radius: 8px;
   height: 100%;
 }
