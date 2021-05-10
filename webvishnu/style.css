@@ -1,4 +1,4 @@
-button {
+.yada {
   transition-duration: 0.4s;
   position: fixed;
   right: 0;
@@ -9,6 +9,39 @@ button {
   border-radius: 8px;
   height: 100%;
 }
+
+.meeting {
+  transition-duration: 0.4s;
+  padding: 15px 10px;
+  background-color: #3bb5e6d7;
+  padding: 5px 10px;
+  font-size: 2em;
+  border-radius: 8px;
+  width: 100%;
+  color: #105570;
+}
+.meeting:hover {
+  background-color: #094b65; /* Green */
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.meeting:active {
+  background-color: #2b1d0e;
+  box-shadow: 0 5px #094b65;
+  border: black;
+  transform: translateY(4px);
+}
+.meet {
+  text-align: center;
+  color: #105570;
+  border: 5px solid #d8eaf0;
+  padding: 5px 10px;
+  font-size: 2em;
+  margin-right: 88px;
+}
+
 button:hover {
   background-color: #094b65; /* Green */
   color: white;
@@ -35,6 +68,6 @@ section {
 }
 
 .sec p {
-  font-size: 1.5em;
+  font-size: 2em;
   color: #094b65;
 }
