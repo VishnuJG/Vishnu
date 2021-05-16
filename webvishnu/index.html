@@ -14,29 +14,25 @@
 			
 		}
 		var x;
-	
-	function countdown() {
-		clearInterval(x);
-		var w=document.getElementById("inp");
-		w=w.value;
-		console.log(w);
-		var distance = w*60;
-		x = setInterval(function() {
-			distance=distance-1;
-			// Output the result in an element with id="demo"
-			document.getElementById("demo").innerHTML = "Time : "+distance;
-			  
-			// If the count down is over, write some text 
-			if (distance < 0) {
-			  clearInterval(x);
-			  var a = document.getElementById("myAudio"); 
-			  a.play(); 
-			 
-			  alert("Timer expired!!!");
-			  document.getElementById("demo").innerHTML = "EXPIRED";
-			}
-		  }, 1000);
-
+	var now = new Date().getTime();
+	var newhour=Math.floor((now % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	var newmin=Math.floor((now % (1000 * 60 * 60)) / (1000 * 60));
+	//if(newhour==15 && newmin==0)
+	console.log(newhour,newmin);
+	if(newhour==15 && newmin>=0)
+	{
+	var distance = 2400-(newmin*60);
+	var x = setInterval(function() {
+		distance=distance-1;
+		document.getElementById("demo").innerHTML = "Time : "+distance;
+		if (distance < 0) {
+			clearInterval(x);
+			var a = document.getElementById("myAudio"); 
+			a.play(); 
+			alert("Timer expired!!!");
+			document.getElementById("demo").innerHTML = "EXPIRED";
+		}
+		}, 1000);
 	}
 		</script>
 		<link rel="stylesheet" type="text/css" href="style.css">		
@@ -46,15 +42,13 @@
 	<section>
 		<h2 id="text"><strong>ಶ್ರೀ ವಿಷ್ಣುಸಹಸ್ರನಾಮ</strong></h2>
 	</section>
-	<div class="timerclass">
+	<div class="timerclass" id="meettimer">
 		<p id="demo" style="text-align: center;font-size: 1em;margin-top: 0px;"></p>
 		<audio id="myAudio">
 			<source src="AlarmClock Sound.mp3" type="audio/mpeg">
 			Your browser does not support the audio element.
 		  </audio>
-		<input type="number" style="width: 50px" value="0" id="inp" name="inp">
-		<label style="font-size:1em;">min</label><br>
-		<input type="submit" class="submitbutton"onclick="countdown()">
+		
 	</div>
 	<div class="meet">
 		<a href="https://meet.google.com/div-zprj-pgb" target="_blank"><input class="meeting" type="button" value="Meeting Link"></a>
