@@ -9,6 +9,9 @@
   border-radius: 8px;
   height: 100%;
 }
+html{
+  scroll-behavior: smooth;
+}
 
 .meeting {
   transition-duration: 0.4s;
